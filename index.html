@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu Entrada para el Evento</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #afafaf;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      background-color: rgb(212, 212, 212);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(58, 54, 54, 0.1);
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .qr-code img {
+      width: 200px;
+      height: 200px;
+    }
+    h1 {
+      color: #380736;
+    }
+    p {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>¡Tu Entrada para el Evento!</h1>
+    <p id="nombre"></p>
+    <p id="infoEvento"></p>
+    <div class="qr-code">
+      <img id="qrCodeImage" alt="Código QR">
+    </div>
+  </div>
+
+  <script>
+    // Obtener los parámetros de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const nombre = urlParams.get('nombre');
+    const apellido = urlParams.get('apellido');
+    const infoEvento = urlParams.get('infoEvento');
+    
+    // Verificar si los parámetros existen antes de mostrar el contenido
+    if (nombre && apellido && infoEvento) {
+      // Actualizar el contenido de la página con la información del usuario
+      document.getElementById('nombre').textContent = "Hola, " + nombre + " " + apellido;
+      document.getElementById('infoEvento').textContent = infoEvento;
+      
+      // Mostrar la imagen del código QR desde el URL
+      const qrCodeImage = document.getElementById('qrCodeImage');
+      qrCodeImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + encodeURIComponent(location.href);
+      
+      // Llamar a la función manejarEscaneo al cargar la página
+      google.script.run.withSuccessHandler(function(response) {
+        alert(response); // Muestra el mensaje de escaneo en una alerta
+      }).manejarEscaneo(nombre);
+      
+    } else {
+      // Mostrar un mensaje de error si faltan parámetros
+      document.body.innerHTML = "<h1>Error: Faltan algunos detalles del evento.</h1>";
+    }
+  </script>
+</body>
+</html>
