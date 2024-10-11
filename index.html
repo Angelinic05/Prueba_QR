@@ -13,7 +13,7 @@
       padding: 50px;
     }
     .container {
-      background-color: rgb(228, 228, 228);
+      background-color: rgb(212, 212, 212);
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(58, 54, 54, 0.1);
@@ -59,10 +59,16 @@
       const qrCodeImage = document.getElementById('qrCodeImage');
       qrCodeImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + encodeURIComponent(location.href);
       
-      // Llamar a la función manejarEscaneo al cargar la página
-      google.script.run.withSuccessHandler(function(response) {
-        alert(response); // Muestra el mensaje de escaneo en una alerta
-      }).manejarEscaneo(nombre);
+      // Verificar si google.script.run está disponible (Google Apps Script)
+      if (typeof google !== 'undefined' && google.script && google.script.run) {
+        // Llamar a la función manejarEscaneo al cargar la página
+        google.script.run.withSuccessHandler(function(response) {
+          alert(response); // Muestra el mensaje de escaneo en una alerta
+        }).manejarEscaneo(nombre);
+      } else {
+        // Mensaje simulado si se ejecuta fuera de Google Apps Script
+        console.log("Simulación de escaneo para: " + nombre);
+      }
       
     } else {
       // Mostrar un mensaje de error si faltan parámetros
