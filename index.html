@@ -59,17 +59,13 @@
       const qrCodeImage = document.getElementById('qrCodeImage');
       qrCodeImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + encodeURIComponent(location.href);
       
-      // Verificar si google.script.run está disponible (Google Apps Script)
-      if (typeof google !== 'undefined' && google.script && google.script.run) {
-        // Llamar a la función manejarEscaneo al cargar la página
-        google.script.run.withSuccessHandler(function(response) {
-          alert(response); // Muestra el mensaje de escaneo en una alerta
-        }).manejarEscaneo(nombre);
-      } else {
-        // Mensaje simulado si se ejecuta fuera de Google Apps Script
-        console.log("Simulación de escaneo para: " + nombre);
-      }
-      
+      // Hacer una solicitud GET para manejar el escaneo
+      fetch(location.href)
+        .then(response => response.text())
+        .then(data => {
+          alert(data); // Mostrar el resultado del escaneo en un mensaje de alerta
+        })
+        .catch(error => console.error('Error:', error));
     } else {
       // Mostrar un mensaje de error si faltan parámetros
       document.body.innerHTML = "<h1>Error: Faltan algunos detalles del evento.</h1>";
