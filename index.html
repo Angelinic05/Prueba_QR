@@ -3,30 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Summit</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Tu Entrada para el Evento</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
   <div class="container">
     <div class="title">
-      <img src="https://github.com/Angelinic05/Prueba_QR/blob/main/Images/DS%20FULL%20COLOR.png" alt="Digital Summit">
+      <img src="Images/DS FULL COLOR.png" alt="Título del Evento">
     </div>
-    <div class="qr-code">
-      <h2 id="nombre"></h2>
-      <p id="infoEvento"></p>
-      <img id="qrCodeImage" src="" alt="Código QR">
-      <div id="entryType"></div>
-    </div>
-    <div class="schedule">
-      <!-- Aquí se mostrará el cronograma del evento -->
-    </div>
-    <div class="nav-buttons">
-      <button id="qrButton" class="nav-button active">QR</button>
-      <button id="scheduleButton" class="nav-button">Cronograma</button>
-      <button id="infoButton" class="nav-button">Información</button >
-    </div>
-  </div>
+    
+    <h2 class="name" id="nombre"></h2>
+    <p id="infoEvento"></p>
 
-  <script src="script.js"></script>
+    <!-- Contenedor para mostrar el tipo de entrada -->
+    <div class="entry-type" id="entryType" style="padding: 10px; border-radius: 5px; color: rgb(0, 0, 0); text-align: center;"></div>
+
+    <div class="qr-code" style="display: block;">
+      <img id="qrCodeImage" src="" alt="Código QR">
+    </div>
+
+    <div id="mensaje" style="margin-top: 20px;"></div>
+
+    <div class="schedule" style="display: none;">
+      <h3>Cronograma</h3>
+      <div class="schedule-item">
+        <div class="schedule-day">Día 1</div>
+        <div class="schedule-time">9:00 am</div>
+        <div class="schedule-activity">Conferencia de apertura</div><br>
+        <div class="schedule-time">2:00 pm</div>
+        <div class="schedule-activity">Taller de capacitación</div><br>
+        <div class="schedule-time">10:00 am</div>
+        <div class="schedule-activity">Ponencia magistral</div>
+      </div>
+      <div class="schedule-item">
+        <div class="schedule-day">Día 2</div>
+        <div class="schedule-activity">Clausura</div>
+        <div class="schedule-time">10:00 am</div>
+      </div>
+    </div>
+
+    <!-- Barra de navegación -->
+    <div class="nav-bar">
+      <button class="nav-button" id="qrButton">
+        <i class="fas fa-qrcode"></i> QR Code
+      </button>
+      <button class="nav-button" id="scheduleButton">
+        <i class="fas fa-calendar-alt"></i> Agenda
+      </button>
+      <button class="nav-button" id="infoButton">
+        <i class="fas fa-info-circle"></i> Info
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+  </div>
 </body>
 </html>
