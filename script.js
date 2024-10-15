@@ -6,6 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
     var infoEvento = urlParams.get('infoEvento');
     var borderColor = urlParams.get('borderColor'); // Agregar este parámetro
 
+    // Verificar si los parámetros son válidos
+    if (!nombre || !apellido || !infoEvento) {
+        console.error("Faltan parámetros en la URL");
+        return;
+    }
+
     // Mostrar la información del evento
     document.getElementById('nombre').innerHTML = nombre + " " + apellido;
     document.getElementById('infoEvento').innerHTML = infoEvento;
