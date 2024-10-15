@@ -4,8 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var nombre = urlParams.get('nombre');
     var apellido = urlParams.get('apellido');
     var infoEvento = urlParams.get('infoEvento');
-    var tipoEntrada = urlParams.get('tipoEntrada'); // Agregar este parámetro
-    var estiloEntrada = urlParams.get('estiloEntrada'); // Agregar este parámetro
+    var tipoEntrada = urlParams.get('tipoEntrada');
   
     // Verificar si los parámetros son válidos
     if (!nombre || !apellido || !infoEvento) {
@@ -24,7 +23,25 @@ document.addEventListener('DOMContentLoaded', () => {
     // Aplicar el estilo del tipo de entrada
     if (tipoEntrada) {
       var entryTypeDiv = document.getElementById('entryType');
+      var estiloEntrada = '';
+      switch (tipoEntrada.toLowerCase()) {
+        case 'Preferencial':
+          estiloEntrada = '#FFD700'; // Color dorado
+          break;
+        case 'General':
+          estiloEntrada = '#000000'; // Color negro
+          break;
+        case 'Pass':
+          estiloEntrada = '#FF5733'; // Color rojo
+          break;
+        default:
+          estiloEntrada = '#000000'; // Color por defecto
+      }
       entryTypeDiv.style.backgroundColor = estiloEntrada;
+      entryTypeDiv.style.padding = '10px';
+      entryTypeDiv.style.borderRadius = '5px';
+      entryTypeDiv.style.color = 'white';
+      entryTypeDiv.style.textAlign = 'center';
       entryTypeDiv.innerHTML = tipoEntrada;
     }
   
