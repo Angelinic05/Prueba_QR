@@ -18,20 +18,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mostrar la sección seleccionada
     function showSection(index) {
-        // Oculta todas las secciones
         const schedule = document.querySelector('.schedule');
         const qrCodeSection = document.querySelector('.qr-code');
+        const titleImage = document.querySelector('.title img');
 
-        // Muestra la sección correspondiente
+        // Muestra u oculta las secciones
         if (index === 0) {
             qrCodeSection.style.display = 'block';
             schedule.style.display = 'none';
+            titleImage.style.display = 'block';  // Muestra la imagen en QR
         } else if (index === 1) {
             qrCodeSection.style.display = 'none';
             schedule.style.display = 'block';
+            titleImage.style.display = 'none';  // Oculta la imagen en Cronograma
         } else {
             qrCodeSection.style.display = 'none';
             schedule.style.display = 'none';
+            titleImage.style.display = 'none';  // Oculta la imagen en Información
         }
 
         // Resaltar el botón activo
