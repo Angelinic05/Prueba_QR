@@ -23,6 +23,17 @@ body {
   .section.active {
     display: block;
   }
+
+  /* Estilo de la imagen del título */
+    #titleImage {
+        width: 100%; /* Ajusta la imagen para ocupar el 100% del contenedor */
+        max-width: 600px; /* Puedes ajustar este valor según lo que consideres apropiado */
+        height: auto; /* Mantiene la proporción correcta de la imagen */
+        object-fit: contain; /* Asegura que la imagen no se deforme */
+        margin: 0 auto; /* Centra la imagen */
+        display: block; /* Asegura que la imagen ocupe su propio espacio en el flujo del diseño */
+    }
+  
   
   /* Estilo del Código QR */
   .qr-code {
