@@ -4,33 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tu Entrada para el Evento</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
-      color: #afafaf;
-      text-align: center;
-      padding: 50px;
-    }
-    .container {
-      background-color: rgb(212, 212, 212);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(58, 54, 54, 0.1);
-      max-width: 400px;
-      margin: 0 auto;
-    }
-    .qr-code img {
-      width: 200px;
-      height: 200px;
-    }
-    h1 {
-      color: #380736;
-    }
-    p {
-      font-size: 16px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
@@ -40,21 +14,7 @@
     <div class="qr-code">
       <img id="qrCodeImage" src="" alt="Código QR">
     </div>
-    <script>
-      // Obtener los parámetros de la URL
-      var urlParams = new URLSearchParams(window.location.search);
-      var nombre = urlParams.get('nombre');
-      var apellido = urlParams.get('apellido');
-      var infoEvento = urlParams.get('infoEvento');
-
-      // Mostrar la información del evento
-      document.getElementById('nombre').innerHTML = "Nombre: " + nombre + " " + apellido;
-      document.getElementById('infoEvento').innerHTML = "Información del Evento: " + infoEvento;
-
-      // Generar el código QR
-      var qrCodeUrl = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://script.google.com/macros/s/AKfycbxsC4Enry4KCbav8CvNmjR7N4MzyEC3XuxKTPOwOgKi17T7nTFIV7DBgB6UE8qqMg510Q/exec?nombre=" + encodeURIComponent(nombre);
-      document.getElementById('qrCodeImage').src = qrCodeUrl;
-    </script>
+    <script src="script.js"></script>
   </div>
 </body>
 </html>
