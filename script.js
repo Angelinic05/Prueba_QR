@@ -71,12 +71,25 @@ document.addEventListener('DOMContentLoaded', () => {
 function obtenerEstiloEntrada(tipoEntrada) {
     switch (tipoEntrada.toLowerCase()) {
         case 'preferencial':
-            return { color: '#FFD700', texto: 'Preferencial' }; // Color dorado
+            return {
+                background: 'linear-gradient(to bottom, #ffd700, #ffd700, #ff9900)',
+                boxShadow: '0 0 10px rgba(255, 215, 0, 0.5)',
+                texto: 'Preferencial'
+            }; // Estilo dorado
         case 'general':
-            return { color: '#000000', texto: 'General' }; // Color negro
+            return {
+                background: '#000000',
+                texto: 'General'
+            }; // Estilo negro
         case 'pass':
-            return { color: '#FF5733', texto: 'Pass' }; // Color rojo
+            return {
+                background: '#FF5733',
+                texto: 'Pass'
+            }; // Estilo rojo
         default:
-            return { color: '#000000', texto: 'General' }; // Color por defecto
+            return {
+                background: '#000000',
+                texto: 'General'
+            }; // Estilo por defecto
     }
 }
