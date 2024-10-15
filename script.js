@@ -78,7 +78,5 @@ document.addEventListener('DOMContentLoaded', () => {
         return { color: '#000000', texto: 'General' }; // Color negro
       case 'Pass':
         return { color: '#FF5733', texto: 'Pass' }; // Color rojo
-      default:
-        return { color: '#000000', texto: 'General' }; // Color por defecto
     }
   }
