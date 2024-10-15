@@ -11,19 +11,98 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(58, 54, 54, 0.1);
-    max-width: 400px;
+    max-width: 800px; /* Aumentamos el ancho del contenedor */
     margin: 0 auto;
   }
   
+  .title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .title img {
+    width: 100%; /* Ajustamos el ancho de la imagen del título */
+    height: auto;
+    margin: 0 auto;
+  }
+  
+  .name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .qr-code {
+    margin: 20px auto;
+    text-align: center;
+  }
+  
   .qr-code img {
-    width: 200px;
-    height: 200px;
+    width: 300px; /* Aumentamos el tamaño del código QR */
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(58, 54, 54, 0.1);
   }
   
-  h1 {
-    color: #380736;
+  .schedule {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(58, 54, 54, 0.1);
   }
   
-  p {
+  .schedule ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .schedule li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .schedule li:last-child {
+    border-bottom: none;
+  }
+  
+  .schedule li span {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .schedule li .day {
+    font-size: 18px;
+    color: #666;
+  }
+  
+  .schedule li .activity {
     font-size: 16px;
+    color: #333;
+  }
+  
+  .schedule li .time {
+    font-size: 14px;
+    color: #999;
+  }
+  
+  /* Estilos para hacerlo responsivo */
+  @media (max-width: 768px) {
+    .schedule li {
+      padding: 10px 5px;
+    }
+    .schedule li span {
+      font-size: 16px;
+    }
+    .schedule li .day {
+      font-size: 16px;
+    }
+    .schedule li .activity {
+      font-size: 14px;
+    }
+    .schedule li .time {
+      font-size: 12px;
+    }
   }
