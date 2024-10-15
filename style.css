@@ -40,6 +40,14 @@ body {
     margin: 15px 0;
 }
 
+.entry-type {
+    background-color: inherit;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+  }
+
 #infoEvento {
     text-align: center;
     margin: 10px 0;
