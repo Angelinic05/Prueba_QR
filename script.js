@@ -71,6 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
     // Mostrar la primera sección (QR) al inicio
     showSection(0);
+  
+    // Llamar a la función de escaneo
+    google.script.run.manejarEscaneo(nombre);
   });
   
   // Función para obtener el estilo del tipo de entrada
