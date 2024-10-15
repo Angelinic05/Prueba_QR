@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var nombre = urlParams.get('nombre');
     var apellido = urlParams.get('apellido');
     var infoEvento = urlParams.get('infoEvento');
-    var borderColor = urlParams.get('borderColor'); // Agregar este parámetro
+    var tipoEntrada = urlParams.get('tipoEntrada'); // Agregar este parámetro
 
     // Verificar si los parámetros son válidos
     if (!nombre || !apellido || !infoEvento) {
@@ -18,12 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Generar el código QR
     var qrCodeUrl = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://script.google.com/macros/s/AKfycbxsC4Enry4KCbav8CvNmjR7N4MzyEC3XuxKTPOwOgKi17T7nTFIV7DBgB6UE8qqMg510Q/exec?nombre=" + encodeURIComponent(nombre);
-    
     document.getElementById('qrCodeImage').src = qrCodeUrl;
 
-    // Aplicar el color del borde al código QR
-    if (borderColor) {
-        document.getElementById('qrCodeImage').style.border = `5px solid ${borderColor}`;
+    // Aplicar el estilo del tipo de entrada
+    if (tipoEntrada) {
+        var entryStyle = obtenerEstiloEntrada(tipoEntrada);
+        var entryTypeDiv = document.getElementById('entryType');
+        entryTypeDiv.style.backgroundColor = entryStyle.color;
+        entryTypeDiv.innerHTML = entryStyle.texto;
     }
 
     // Funciones de navegación
@@ -64,3 +66,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mostrar la primera sección (QR) al inicio
     showSection(0);
 });
+
+// Función para obtener el color y texto del tipo de entrada
+function obtenerEstiloEntrada(tipoEntrada) {
+    switch (tipoEntrada.toLowerCase()) {
+        case 'preferencial':
+            return { color: '#FFD700', texto: 'Preferencial' }; // Color dorado
+        case 'general':
+            return { color: '#000000', texto: 'General' }; // Color negro
+        case 'pass':
+            return { color: '#FF5733', texto: 'Pass' }; // Color rojo
+        default:
+            return { color: '#000000', texto: 'General' }; // Color por defecto
+    }
+}
