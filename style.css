@@ -1,7 +1,7 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-    color: #444;
+    background-color: #1c232f;
+    color: #ffffff;
     text-align: center;
     padding: 0;
     margin: 0;
@@ -21,18 +21,15 @@ body {
     justify-content: space-between;
 }
 
-.section {
-    display: none;
-    animation: fadeIn 1s ease forwards;
+.title img {
+    max-width: 100%;
+    height: auto;
+    display: none; /* Oculta la imagen del título */
 }
 
-.section.active {
-    display: block;
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
+h2.name {
+    font-size: 1.8em;
+    margin: 10px 0;
 }
 
 .qr-code img {
@@ -41,20 +38,20 @@ body {
     border-radius: 15px;
     border: 5px solid #2c662d;
     box-shadow: 0 0 15px rgba(0, 128, 0, 0.2);
-    animation: zoomIn 1s ease;
 }
 
-@keyframes zoomIn {
-    0% { transform: scale(0); }
-    100% { transform: scale(1); }
-}
-
-.schedule, .infoSection {
+.schedule {
     margin-top: 20px;
-    background-color: #fff;
+    background-color: #1c232f;
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 0 15px rgba(0, 128, 0, 0.1);
+    text-align: left;
+}
+
+.schedule h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
 }
 
 .schedule ol {
@@ -64,17 +61,32 @@ body {
 
 .schedule li {
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #1c232f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .schedule li span {
     font-weight: bold;
+    font-size: 1.1em;
 }
 
+.schedule li .activity {
+    flex: 1;
+    text-align: left;
+}
+
+.schedule li .time {
+    flex-basis: 20%;
+    text-align: right;
+}
+
+/* Barra de navegación */
 .nav-bar {
-    background-color: #2c662d;
+    background: linear-gradient(90deg, #49ffa2, #07ffe3);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding: 10px 0;
     position: fixed;
     bottom: 0;
@@ -88,12 +100,12 @@ body {
     font-size: 16px;
     border: none;
     cursor: pointer;
-    padding: 10px;
+    padding: 10px 20px;
     flex: 1;
 }
 
 .nav-button.active {
-    background-color: #1e4d1f;
+    background-color: #1c232f;
     border-radius: 10px;
 }
 
@@ -103,11 +115,25 @@ body {
         width: 200px;
         height: 200px;
     }
+
+    .schedule li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .schedule li .time {
+        text-align: left;
+        margin-top: 5px;
+    }
 }
 
 @media (max-width: 480px) {
     .qr-code img {
         width: 150px;
         height: 150px;
+    }
+
+    .schedule li {
+        font-size: 0.9em;
     }
 }
