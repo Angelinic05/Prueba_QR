@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       qrCodeSection.style.display = 'none';
       schedule.style.display = 'none';
-      infoSection.style.display = 'block';
+      infoSection.style.display = 'block';  
       titleImage.style.display = 'none';  // Oculta la imagen en Información
       locationContainer.style.display = 'block';
     }
