@@ -20,10 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
     var qrCodeUrl = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://script.google.com/a/macros/luqueacademy.com/s/AKfycbzT8q6T8B2SKVTlk8SROtbX5uZFrDXk0a1rEXJ1FFTSuszKgLy5MAzMBXFAPxI9gxcJSA/exec?nombre=" + encodeURIComponent(nombre);
     document.getElementById('qrCodeImage').src = qrCodeUrl;
   
-    // Aplicar el estilo del tipo de entrada
+    // Aplicar el estilo del tipo de entrada utilizando la función obtenerEstiloEntrada del App Script
     if (tipoEntrada) {
       var estiloEntrada = urlParams.get('estiloEntrada');
-      var entryStyle = obtenerEstiloEntrada(tipoEntrada, estiloEntrada);
+      var entryStyle = obtenerEstiloEntrada(tipoEntrada, estiloEntrada); // Utilizar la función obtenerEstiloEntrada del App Script
       var entryTypeDiv = document.getElementById('entryType');
       entryTypeDiv.style.backgroundColor = entryStyle.color;
       entryTypeDiv.innerHTML = entryStyle.texto;
@@ -67,30 +67,3 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mostrar la primera sección (QR) al inicio
     showSection(0);
   });
-  
-  // Función para obtener el color y texto del tipo de entrada
-  function obtenerEstiloEntrada(tipoEntrada, estiloEntrada) {
-    switch (tipoEntrada.toLowerCase()) {
-      case 'preferencial':
-        return {
-          background: 'linear-gradient(to bottom, #ffd700, #ffd700, #ff9900)',
-          boxShadow: '0 0 10px rgba(255, 215, 0, 0.5)',
-          texto: 'Preferencial'
-        }; // Estilo dorado
-      case 'general':
-        return {
-          background: '#000000',
-          texto: 'General'
-        }; // Estilo negro
-      case 'pass':
-        return {
-          background: '#FF5733',
-          texto: 'Pass'
-        }; // Estilo rojo
-      default:
-        return {
-          background: '#000000',
-          texto: 'General'
-        }; // Estilo por defecto
-    }
-  }
