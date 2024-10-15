@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var apellido = urlParams.get('apellido');
     var infoEvento = urlParams.get('infoEvento');
     var tipoEntrada = urlParams.get('tipoEntrada'); // Agregar este parámetro
+    var estiloEntrada = urlParams.get('estiloEntrada'); // Agregar este parámetro
   
     // Verificar si los parámetros son válidos
     if (!nombre || !apellido || !infoEvento) {
@@ -20,13 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
     var qrCodeUrl = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://script.google.com/a/macros/luqueacademy.com/s/AKfycbzT8q6T8B2SKVTlk8SROtbX5uZFrDXk0a1rEXJ1FFTSuszKgLy5MAzMBXFAPxI9gxcJSA/exec?nombre=" + encodeURIComponent(nombre);
     document.getElementById('qrCodeImage').src = qrCodeUrl;
   
-    // Aplicar el estilo del tipo de entrada utilizando la función obtenerEstiloEntrada del App Script
+    // Aplicar el estilo del tipo de entrada
     if (tipoEntrada) {
-      var estiloEntrada = urlParams.get('estiloEntrada');
-      var entryStyle = obtenerEstiloEntrada(tipoEntrada, estiloEntrada); // Utilizar la función obtenerEstiloEntrada del App Script
       var entryTypeDiv = document.getElementById('entryType');
-      entryTypeDiv.style.backgroundColor = entryStyle.color;
-      entryTypeDiv.innerHTML = entryStyle.texto;
+      entryTypeDiv.style.backgroundColor = estiloEntrada;
+      entryTypeDiv.innerHTML = tipoEntrada;
     }
   
     // Funciones de navegación
