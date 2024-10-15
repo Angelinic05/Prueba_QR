@@ -38,19 +38,23 @@ document.addEventListener('DOMContentLoaded', () => {
       const schedule = document.querySelector('.schedule');
       const qrCodeSection = document.querySelector('.qr-code');
       const titleImage = document.querySelector('.title img');
+      const infoSection = document.querySelector('.info');
   
       // Muestra u oculta las secciones
       if (index === 0) {
         qrCodeSection.style.display = 'block';
         schedule.style.display = 'none';
+        infoSection.style.display = 'none';
         titleImage.style.display = 'block';  // Muestra la imagen en QR
       } else if (index === 1) {
         qrCodeSection.style.display = 'none';
         schedule.style.display = 'block';
+        infoSection.style.display = 'none';
         titleImage.style.display = 'none';  // Oculta la imagen en Cronograma
       } else {
         qrCodeSection.style.display = 'none';
         schedule.style.display = 'none';
+        infoSection.style.display = 'block';
         titleImage.style.display = 'none';  // Oculta la imagen en Información
       }
   
@@ -72,11 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Función para obtener el estilo del tipo de entrada
   function getEntryStyle(tipoEntrada) {
     switch (tipoEntrada.toLowerCase()) {
-      case 'Preferencial':
+      case 'preferencial':
         return { color: '#FFD700', texto: 'Preferencial' }; // Color dorado
-      case 'General':
+      case 'general':
         return { color: '#000000', texto: 'General' }; // Color negro
-      case 'Pass':
+      case 'pass':
         return { color: '#FF5733', texto: 'Pass' }; // Color rojo
+      default:
+        return null;
     }
   }

@@ -1,13 +1,14 @@
-/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column; /* Asegura que el contenido se apile verticalmente */
-    min-height: 100vh; /* Hacemos que el cuerpo ocupe toda la altura de la ventana */
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url('Images/BACKGROUND\ DIGITAL\ SUMMIT-03.png'); /* Add a background image */
+    background-size: cover;
     background-color: #000000;
-}
+  }
 
 .container {
     flex: 1; /* Permite que el contenedor ocupe el espacio restante */
@@ -157,6 +158,27 @@ body {
 .nav-button.active {
     background: linear-gradient(180deg, #42ee95c2, #0ad1bab7); /* Color de fondo para el botón activo */
 }
+
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .info p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .info img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
 
 /* Estilos responsivos */
 @media (max-width: 600px) {
