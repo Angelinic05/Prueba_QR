@@ -40,7 +40,6 @@
     <div class="qr-code">
       <img id="qrCodeImage" alt="Código QR">
     </div>
-  </div>
 
   <script>
     // Obtener los parámetros de la URL
@@ -60,7 +59,7 @@
       qrCodeImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + encodeURIComponent(location.href);
       
       // Hacer una solicitud GET para manejar el escaneo
-      fetch(location.href)
+      fetch(`https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec?nombre=${encodeURIComponent(nombre)}`)
         .then(response => response.text())
         .then(data => {
           alert(data); // Mostrar el resultado del escaneo en un mensaje de alerta
