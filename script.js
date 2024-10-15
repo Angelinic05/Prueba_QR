@@ -21,29 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('qrCodeImage').src = qrCodeUrl;
   
     // Aplicar el estilo del tipo de entrada
-    if (tipoEntrada) {
-      var entryTypeDiv = document.getElementById('entryType');
-      var estiloEntrada = '';
-      switch (tipoEntrada.toLowerCase()) {
-        case 'Preferencial':
-          estiloEntrada = '#FFD700'; // Color dorado
-          break;
-        case 'General':
-          estiloEntrada = '#000000'; // Color negro
-          break;
-        case 'Pass':
-          estiloEntrada = '#FF5733'; // Color rojo
-          break;
-        default:
-          estiloEntrada = '#000000'; // Color por defecto
-      }
-      entryTypeDiv.style.backgroundColor = estiloEntrada;
-      entryTypeDiv.style.padding = '10px';
-      entryTypeDiv.style.borderRadius = '5px';
-      entryTypeDiv.style.color = 'white';
-      entryTypeDiv.style.textAlign = 'center';
-      entryTypeDiv.innerHTML = tipoEntrada;
-    }
+    var entryTypeDiv = document.getElementById('entryType');
+    var estiloEntrada = getEntryStyle(tipoEntrada);
+    entryTypeDiv.style.backgroundColor = estiloEntrada.color;
+    entryTypeDiv.style.padding = '10px';
+    entryTypeDiv.style.borderRadius = '5px';
+    entryTypeDiv.style.color = 'white';
+    entryTypeDiv.style.textAlign = 'center';
+    entryTypeDiv.innerHTML = tipoEntrada;
   
     // Funciones de navegación
     const navButtons = document.querySelectorAll('.nav-button');
@@ -83,3 +68,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mostrar la primera sección (QR) al inicio
     showSection(0);
   });
+  
+  // Función para obtener el estilo del tipo de entrada
+  function getEntryStyle(tipoEntrada) {
+    switch (tipoEntrada.toLowerCase()) {
+      case 'Preferencial':
+        return { color: '#FFD700', texto: 'Preferencial' }; // Color dorado
+      case 'General':
+        return { color: '#000000', texto: 'General' }; // Color negro
+      case 'Pass':
+        return { color: '#FF5733', texto: 'Pass' }; // Color rojo
+      default:
+        return { color: '#000000', texto: 'General' }; // Color por defecto
+    }
+  }
