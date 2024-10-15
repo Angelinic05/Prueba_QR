@@ -1,5 +1,3 @@
-// script.js
-
 document.addEventListener('DOMContentLoaded', () => {
     // Obtener los parámetros de la URL
     var urlParams = new URLSearchParams(window.location.search);
@@ -37,5 +35,4 @@ document.addEventListener('DOMContentLoaded', () => {
   
     // Mostrar la primera sección (QR) al inicio
     showSection(0);
-  });
-  
+});
