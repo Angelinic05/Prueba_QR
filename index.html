@@ -59,12 +59,19 @@
       qrCodeImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + encodeURIComponent(location.href);
       
       // Hacer una solicitud GET para manejar el escaneo
-      fetch(`https://script.google.com/macros/s/AKfycbxsC4Enry4KCbav8CvNmjR7N4MzyEC3XuxKTPOwOgKi17T7nTFIV7DBgB6UE8qqMg510Q/exec?nombre=${encodeURIComponent(nombre)}`)
-        .then(response => response.text())
-        .then(data => {
-          alert(data); // Mostrar el resultado del escaneo en un mensaje de alerta
-        })
-        .catch(error => console.error('Error:', error));
+      // Hacer una solicitud POST para manejar el escaneo
+      fetch(`https://script.google.com/macros/s/AKfycbxsC4Enry4KCbav8CvNmjR7N4MzyEC3XuxKTPOwOgKi17T7nTFIV7DBgB6UE8qqMg510Q/exec`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ nombre: encodeURIComponent(nombre) })
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.resultado); // Mostrar el resultado del escaneo en un mensaje de alerta
+      })
+      .catch(error => console.error('Error:', error));
     } else {
       // Mostrar un mensaje de error si faltan parámetros
       document.body.innerHTML = "<h1>Error: Faltan algunos detalles del evento.</h1>";
