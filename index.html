@@ -24,6 +24,10 @@
       const apellido = urlParams.get('apellido');
       const infoEvento = urlParams.get('infoEvento');
       
+      console.log("Nombre: " + nombre);
+      console.log("Apellido: " + apellido);
+      console.log("Info Evento: " + infoEvento);
+      
       // Verificar si los parámetros existen antes de mostrar el contenido
       if (nombre && apellido && infoEvento) {
         // Actualizar el contenido de la página con la información del usuario
@@ -46,6 +50,7 @@
           })
           .then(response => response.text())
           .then(data => {
+            console.log("Resultado del escaneo: " + data);
             alert(data); // Mostrar el resultado del escaneo en un mensaje de alerta
           })
           .catch(error => {
