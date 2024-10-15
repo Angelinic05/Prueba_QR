@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('infoEvento').innerHTML = infoEvento;
 
     // Generar el código QR
-    var qrCodeUrl = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://script.google.com/macros/s/AKfycbxsC4Enry4KCbav8CvNmjR7N4MzyEC3XuxKTPOwOgKi17T7nTFIV7DBgB6UE8qqMg510Q/exec?nombre=" + encodeURIComponent(nombre);
+    var qrCodeUrl = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://script.google.com/a/macros/luqueacademy.com/s/AKfycbzT8q6T8B2SKVTlk8SROtbX5uZFrDXk0a1rEXJ1FFTSuszKgLy5MAzMBXFAPxI9gxcJSA/exec?nombre=" + encodeURIComponent(nombre);
     document.getElementById('qrCodeImage').src = qrCodeUrl;
 
     // Aplicar el estilo del tipo de entrada
