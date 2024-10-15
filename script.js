@@ -77,11 +77,11 @@ document.addEventListener('DOMContentLoaded', () => {
   function getEntryStyle(tipoEntrada) {
     switch (tipoEntrada.toLowerCase()) {
       case 'preferencial':
-        return { color: '#FFD700', texto: 'Preferencial' }; // Color dorado
+        return { color: '#2EBBFF', texto: 'Preferencial' }; // Color dorado
       case 'general':
-        return { color: '#000000', texto: 'General' }; // Color negro
+        return { color: '#02E86F', texto: 'General' }; // Color negro
       case 'pass':
-        return { color: '#FF5733', texto: 'Pass' }; // Color rojo
+        return { color: '#4CFF55', texto: 'Diamond' }; // Color rojo
       default:
         return null;
     }
