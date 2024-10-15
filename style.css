@@ -52,7 +52,7 @@ body {
 
 
 .qr-code img {
-    border: 5px solid #050911;
+    /* border: 5px solid #050911; */
     width: 150px; /* Ancho fijo para el código QR */
     height: auto;
 }
@@ -98,7 +98,7 @@ body {
 }
 
 .nav-button.active {
-    background: linear-gradient(180deg, #4affa1, #07ffe3); /* Color de fondo para el botón activo */
+    background: linear-gradient(180deg, #42ee95c2, #0ad1bab7); /* Color de fondo para el botón activo */
 }
 
 /* Estilos responsivos */
