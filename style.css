@@ -52,9 +52,7 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para el borde */
 }
 
-
 .qr-code img {
-    /* border: 5px solid #050911; */
     width: 150px; /* Ancho fijo para el código QR */
     height: auto;
 }
@@ -66,14 +64,35 @@ body {
 .schedule h3 {
     text-align: center;
     margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #003366; /* Color del encabezado */
 }
 
-.schedule ol {
-    padding-left: 20px;
+.schedule-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    background: #f8f8f8; /* Fondo claro para cada actividad */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra para cada actividad */
 }
 
-.day, .activity, .time {
-    display: block;
+.schedule-day {
+    font-weight: bold; /* Negrita para el día */
+    color: #007bff; /* Color para el día */
+}
+
+.schedule-activity {
+    flex: 1;
+    padding: 0 10px; /* Espaciado entre elementos */
+    font-weight: normal; /* Peso de fuente normal */
+}
+
+.schedule-time {
+    font-weight: bold; /* Negrita para la hora */
+    color: #28a745; /* Color verde para la hora */
 }
 
 .nav-bar {
@@ -116,6 +135,15 @@ body {
 
     .name {
         font-size: 1.3rem; /* Tamaño de fuente más pequeño en móviles */
+    }
+
+    .schedule-item {
+        flex-direction: column; /* Cambia la dirección en móviles */
+        align-items: flex-start; /* Alinear al inicio */
+    }
+
+    .schedule-day, .schedule-activity, .schedule-time {
+        font-size: 0.9rem; /* Tamaño de fuente más pequeño en móviles */
     }
 }
 
