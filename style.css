@@ -21,6 +21,8 @@ body {
 }
 
 .title {
+    display: flex;
+    justify-content: center;
     text-align: center;
     padding: 20px;
     background-color: #050911;
