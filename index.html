@@ -5,31 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tu Entrada para el Evento</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
-      color: #afafaf;
-      text-align: center;
-      padding: 50px;
-    }
-    .container {
-      background-color: rgb(212, 212, 212);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(58, 54, 54, 0.1);
-      max-width: 400px;
-      margin: 0 auto;
-    }
-    .qr-code img {
-      width: 200px;
-      height: 200px;
-    }
-    h1 {
-      color: #380736;
-    }
-    p {
-      font-size: 16px;
-    }
+    /* Estilos */
   </style>
 </head>
 <body>
@@ -59,9 +35,7 @@
         qrCodeImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + encodeURIComponent(location.href);
         
         // Comprobar si se accede a la página desde un escaneo
-        // Comprobar si se accede a la página desde un escaneo
-        // Comprobar si se accede a la página desde un escaneo
-        if (window.history.state && window.history.state.scanned) {
+        if (window.location.href.includes("scanned")) {
           // Hacer una solicitud POST para manejar el escaneo
           fetch(`https://script.google.com/macros/s/AKfycbxsC4Enry4KCbav8CvNmjR7N4MzyEC3XuxKTPOwOgKi17T7nTFIV7DBgB6UE8qqMg510Q/exec`, {
             method: 'POST',
@@ -74,7 +48,10 @@
           .then(data => {
             alert(data); // Mostrar el resultado del escaneo en un mensaje de alerta
           })
-          .catch(error => console.error('Error:', error));
+          .catch(error => {
+            console.error('Error:', error);
+            alert('Error al procesar el escaneo'); // Mostrar un mensaje de error
+          });
         }
       } else {
         // Mostrar un mensaje de error si faltan parámetros
