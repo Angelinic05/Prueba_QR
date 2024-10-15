@@ -55,9 +55,9 @@ body {
 .qr-code img {
     width: 150px; /* Ancho fijo para el código QR */
     height: auto;
-    border: 5px solid; 
+    border: 12px solid #4affa1;
     border-radius: 10px; /* Bordes redondeados */
-    border-image: linear-gradient(to right, #4affa1, #07ffe3) 1; /* Agrega un borde con colores degradados */
+    
 }
 
 .schedule {
