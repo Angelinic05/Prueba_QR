@@ -4,30 +4,32 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f4f4f4;
+    flex-direction: column; /* Asegura que el contenido se apile verticalmente */
+    min-height: 100vh; /* Hacemos que el cuerpo ocupe toda la altura de la ventana */
+    background-color: #000000;
 }
 
 .container {
+    flex: 1; /* Permite que el contenedor ocupe el espacio restante */
     width: 90%;
     max-width: 800px;
-    background: white;
+    background: #ffffff;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    margin: 20px auto; /* Centra el contenedor en la página */
 }
 
 .title {
     text-align: center;
     padding: 20px;
-    background-color: #007BFF;
+    background-color: #050911;
     color: white;
 }
 
 .title img {
-    max-width: 100%; /* Asegura que la imagen no exceda el contenedor */
-    height: auto; /* Mantiene la proporción */
+    max-width: 100%;
+    height: auto;
 }
 
 .name {
@@ -44,11 +46,15 @@ body {
 .qr-code {
     text-align: center;
     padding: 10px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para el borde */
 }
 
+
 .qr-code img {
+    border: 5px solid #050911;
     width: 150px; /* Ancho fijo para el código QR */
-    height: auto; /* Mantiene la proporción */
+    height: auto;
 }
 
 .schedule {
@@ -72,12 +78,17 @@ body {
     display: flex;
     justify-content: space-around;
     padding: 10px;
-    background-color: #007BFF;
+    background-color: #000000;
+    position: fixed; /* Fija la barra de navegación en la parte inferior */
+    bottom: 0; /* Se asegura de que esté al fondo */
+    left: 0;
+    right: 0; /* Ocupa todo el ancho de la ventana */
+    z-index: 100; /* Asegura que esté encima de otros elementos */
 }
 
 .nav-button {
-    background-color: #0056b3;
-    color: white;
+    background: linear-gradient(180deg, #4affa1, #07ffe3);
+    color: rgb(0, 0, 0);
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -87,7 +98,7 @@ body {
 }
 
 .nav-button.active {
-    background-color: #004494; /* Color de fondo para el botón activo */
+    background: linear-gradient(180deg, #4affa1, #07ffe3); /* Color de fondo para el botón activo */
 }
 
 /* Estilos responsivos */
