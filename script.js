@@ -35,16 +35,16 @@ function showContent(contentId) {
 
 // Asignar eventos a los botones de navegación
 document.getElementById('nav-qr').addEventListener('click', function() {
+    showContent('qr-section');
+  });
+  
+  document.getElementById('nav-schedule').addEventListener('click', function() {
+    showContent('schedule-section');
+  });
+  
+  document.getElementById('nav-info').addEventListener('click', function() {
+    showContent('info-section');
+  });
+  
+  // Inicialmente mostrar la sección del código QR
   showContent('qr-section');
-});
-
-document.getElementById('nav-schedule').addEventListener('click', function() {
-  showContent('schedule-section');
-});
-
-document.getElementById('nav-info').addEventListener('click', function() {
-  showContent('info-section');
-});
-
-// Inicialmente mostrar la sección del código QR
-showContent('qr-section');

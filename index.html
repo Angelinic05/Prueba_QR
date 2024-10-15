@@ -5,46 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tu Entrada para el Evento</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Link a librería de iconos (puedes usar otra si prefieres) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   <div class="container">
-    <!-- Animación del Código QR -->
-    <div class="section qr-section active" id="qrSection">
-      <div class="qr-code animate">
-        <img id="qrCodeImage" src="" alt="Código QR">
+    <div id="qrSection" class="section active">
+      <div class="title">
+        <img src="Images/DS COLOR PLANO.png" alt="Título del Evento">
+      </div>
+      <h2 class="name" id="nombre">¡Bienvenido!</h2>
+      <p id="infoEvento">Aquí está tu entrada con el código QR para el evento.</p>
+      <div class="qr-code">
+        <img id="qrCodeImage" src="Images/qr-sample.png" alt="Código QR"> <!-- Aquí puedes reemplazar con la URL de tu QR -->
       </div>
     </div>
 
-    <!-- Cronograma del Evento -->
-    <div class="section schedule-section" id="scheduleSection">
+    <div id="scheduleSection" class="section">
       <h2>Cronograma del Evento</h2>
       <div class="schedule">
         <ol>
-          <li><span class="day">Día 1</span> - <span class="activity">Conferencia de apertura</span> <span class="time">9:00 am</span></li>
-          <li><span class="day">Día 1</span> - <span class="activity">Taller de capacitación</span> <span class="time">2:00 pm</span></li>
-          <li><span class="day">Día 2</span> - <span class="activity">Ponencia magistral</span> <span class="time">10:00 am</span></li>
-          <li><span class="day">Día 2</span> - <span class="activity">Actividad de networking</span> <span class="time">6:00 pm</span></li>
-          <li><span class="day">Día 3</span> - <span class="activity">Clausura del evento</span> <span class="time">12:00 pm</span></li>
+          <li><span class="day">Día 1</span> <span class="activity">Conferencia de apertura</span> <span class="time">9:00 am</span></li>
+          <li><span class="day">Día 1</span> <span class="activity">Taller de capacitación</span> <span class="time">2:00 pm</span></li>
+          <li><span class="day">Día 2</span> <span class="activity">Ponencia magistral</span> <span class="time">10:00 am</span></li>
+          <li><span class="day">Día 2</span> <span class="activity">Actividad de networking</span> <span class="time">6:00 pm</span></li>
+          <li><span class="day">Día 3</span> <span class="activity">Clausura del evento</span> <span class="time">12:00 pm</span></li>
         </ol>
       </div>
     </div>
 
-    <!-- Información Relevante -->
-    <div class="section info-section" id="infoSection">
-      <h2>Información del Evento</h2>
-      <p id="infoEvento"></p>
+    <div id="infoSection" class="section">
+      <h2>Información Relevante</h2>
+      <p>Aquí encontrarás toda la información importante sobre el evento, como las medidas de seguridad, lugares de descanso, y más.</p>
     </div>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+      <button id="qrButton" class="nav-button active"><i class="fas fa-qrcode"></i></button>
+      <button id="scheduleButton" class="nav-button"><i class="fas fa-calendar-alt"></i></button>
+      <button id="infoButton" class="nav-button"><i class="fas fa-info-circle"></i></button>
+    </nav>
+    
+    <script src="script.js"></script>
   </div>
-
-  <!-- Barra de Navegación Inferior -->
-  <nav class="navbar">
-    <button id="qrButton" class="nav-button active"><i class="fas fa-qrcode"></i></button>
-    <button id="scheduleButton" class="nav-button"><i class="fas fa-calendar-alt"></i></button>
-    <button id="infoButton" class="nav-button"><i class="fas fa-info-circle"></i></button>
-  </nav>
-
-  <script src="script.js"></script>
 </body>
 </html>
