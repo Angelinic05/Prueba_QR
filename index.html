@@ -5,7 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tu Entrada para el Evento</title>
   <style>
-    /* Estilos */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #afafaf;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      background-color: rgb(212, 212, 212);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(58, 54, 54, 0.1);
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .qr-code img {
+      width: 200px;
+      height: 200px;
+    }
+    h1 {
+      color: #380736;
+    }
+    p {
+      font-size: 16px;
+    }
   </style>
 </head>
 <body>
@@ -17,52 +41,34 @@
       <img id="qrCodeImage" alt="Código QR">
     </div>
 
-    <script>
-      // Obtener los parámetros de la URL
-      const urlParams = new URLSearchParams(window.location.search);
-      const nombre = urlParams.get('nombre');
-      const apellido = urlParams.get('apellido');
-      const infoEvento = urlParams.get('infoEvento');
+  <script>
+    // Obtener los parámetros de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const nombre = urlParams.get('nombre');
+    const apellido = urlParams.get('apellido');
+    const infoEvento = urlParams.get('infoEvento');
+    
+    // Verificar si los parámetros existen antes de mostrar el contenido
+    if (nombre && apellido && infoEvento) {
+      // Actualizar el contenido de la página con la información del usuario
+      document.getElementById('nombre').textContent = "Hola, " + nombre + " " + apellido;
+      document.getElementById('infoEvento').textContent = infoEvento;
       
-      console.log("Nombre: " + nombre);
-      console.log("Apellido: " + apellido);
-      console.log("Info Evento: " + infoEvento);
+      // Mostrar la imagen del código QR desde el URL
+      const qrCodeImage = document.getElementById('qrCodeImage');
+      qrCodeImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + encodeURIComponent(location.href);
       
-      // Verificar si los parámetros existen antes de mostrar el contenido
-      if (nombre && apellido && infoEvento) {
-        // Actualizar el contenido de la página con la información del usuario
-        document.getElementById('nombre').textContent = "Hola, " + nombre + " " + apellido;
-        document.getElementById('infoEvento').textContent = infoEvento;
-        
-        // Mostrar la imagen del código QR desde el URL
-        const qrCodeImage = document.getElementById('qrCodeImage');
-        qrCodeImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + encodeURIComponent(location.href);
-        
-        // Comprobar si se accede a la página desde un escaneo
-        if (window.location.href.includes("scanned")) {
-          // Hacer una solicitud POST para manejar el escaneo
-          fetch(`https://script.google.com/macros/s/AKfycbxsC4Enry4KCbav8CvNmjR7N4MzyEC3XuxKTPOwOgKi17T7nTFIV7DBgB6UE8qqMg510Q/exec`, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: `nombre=${encodeURIComponent(nombre)}`
-          })
-          .then(response => response.text())
-          .then(data => {
-            console.log("Resultado del escaneo: " + data);
-            alert(data); // Mostrar el resultado del escaneo en un mensaje de alerta
-          })
-          .catch(error => {
-            console.error('Error:', error);
-            alert('Error al procesar el escaneo'); // Mostrar un mensaje de error
-          });
-        }
-      } else {
-        // Mostrar un mensaje de error si faltan parámetros
-        document.body.innerHTML = "<h1>Error: Faltan algunos detalles del evento.</h1>";
-      }
-    </script>
-  </div>
+      // Hacer una solicitud GET para manejar el escaneo
+      fetch(`https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec?nombre=${encodeURIComponent(nombre)}`)
+        .then(response => response.text())
+        .then(data => {
+          alert(data); // Mostrar el resultado del escaneo en un mensaje de alerta
+        })
+        .catch(error => console.error('Error:', error));
+    } else {
+      // Mostrar un mensaje de error si faltan parámetros
+      document.body.innerHTML = "<h1>Error: Faltan algunos detalles del evento.</h1>";
+    }
+  </script>
 </body>
 </html>
