@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var infoEvento = urlParams.get('infoEvento');
 
     // Mostrar la información del evento
-    document.getElementById('nombre').innerHTML = "Nombre: " + nombre + " " + apellido;
+    document.getElementById('nombre').innerHTML = nombre + " " + apellido;
     document.getElementById('infoEvento').innerHTML = "Información del Evento: " + infoEvento;
 
     // Generar el código QR
