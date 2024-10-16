@@ -7,18 +7,16 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-image: url('Images/BACKGROUND\ DIGITAL\ SUMMIT-03.png'); /* Add a background image */
+    background-image: url('Images/BACKGROUND\ DIGITAL\ SUMMIT-03.png'); /* Agregar una imagen de fondo */
     background-size: cover;
     background-color: #000000;
-  }
+}
 
 .container {
     flex: 1; /* Permite que el contenedor ocupe el espacio restante */
     width: 90%;
     max-width: 800px;
-    /* background: #ffffff; */
     border-radius: 8px;
-    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
     overflow: hidden;
     margin: 20px auto; /* Centra el contenedor en la página */
 }
@@ -28,7 +26,6 @@ body {
     justify-content: center;
     text-align: center;
     padding: 15px;
-    /* background-color: #000000; */
 }
 
 .title img {
@@ -50,7 +47,7 @@ body {
     border-radius: 5px;
     color: white;
     text-align: center;
-  }
+}
 
 #infoEvento {
     text-align: center;
@@ -61,7 +58,6 @@ body {
     text-align: center;
     padding: 10px;
     border-radius: 10px; /* Bordes redondeados */
-    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  */
 }
 
 .qr-code img {
@@ -69,35 +65,31 @@ body {
     height: auto;
     border: 12px solid #ffffff;
     border-radius: 7px; /* Bordes redondeados */
-    
 }
 
 .location-container {
     margin-top: 20px;
     padding: 10px;
     border-radius: 5px;
-    /* background-color: #f0f0f0; */
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-  }
-  
-  .location-container i {
+}
+
+.location-container i {
     font-size: 24px;
     margin-right: 10px;
     color: #FF0000; /* Icono rojo */
-  }
-  
-  .location-container span {
+}
+
+.location-container span {
     font-size: 18px;
     font-weight: bold;
     color: #ffffff;
-    
-  }
-  
-  .location-container p {
+}
+
+.location-container p {
     font-size: 14px;
     color: #ffffff;
     margin-top: 10px;
-  }
+}
 
 .schedule {
     padding: 7px;
@@ -118,7 +110,6 @@ body {
     margin: 5px 0;
     background: #f8f8f8; /* Fondo claro para cada actividad */
     border-radius: 5px; /* Bordes redondeados */
-    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
 }
 
 .schedule-day {
@@ -164,26 +155,25 @@ body {
     background: linear-gradient(180deg, #42ee95c2, #0ad1bab7); /* Color de fondo para el botón activo */
 }
 
-
 .info {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-  }
-  
-  .info p {
+}
+
+.info p {
     font-size: 18px;
     color: #666;
     margin-bottom: 10px;
-  }
-  
-  .info img {
+}
+
+.info img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     margin-bottom: 10px;
-  }
+}
 
 /* Estilos responsivos */
 @media (max-width: 600px) {
@@ -217,5 +207,29 @@ body {
 
     .name {
         font-size: 1.4rem; /* Tamaño de fuente intermedio */
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px; /* Ajusta el ancho del contenedor */
+        margin: 40px auto; /* Mayor margen para pantallas grandes */
+    }
+
+    .title img {
+        max-width: 70%; /* Ajusta el tamaño de la imagen en pantallas grandes */
+    }
+
+    .name {
+        font-size: 2rem; /* Aumenta el tamaño de fuente en pantallas grandes */
+    }
+
+    .schedule-item {
+        flex-direction: row; /* Mantiene la dirección en fila */
+        align-items: center; /* Alineación centrada */
+    }
+
+    .schedule-day, .schedule-activity, .schedule-time {
+        font-size: 1rem; /* Tamaño de fuente adecuado para pantallas grandes */
     }
 }
