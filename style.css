@@ -16,7 +16,7 @@ body {
     flex: 1; /* Permite que el contenedor ocupe el espacio restante */
     width: 90%;
     max-width: 800px;
-    background: #ffffff;
+    /* background: #ffffff; */
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -28,11 +28,11 @@ body {
     justify-content: center;
     text-align: center;
     padding: 15px;
-    background-color: #000000;
+    /* background-color: #000000; */
 }
 
 .title img {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
 }
 
@@ -40,6 +40,8 @@ body {
     text-align: center;
     font-size: 1.5rem;
     margin: 15px 0;
+    color: white;
+    font-weight: bold;
 }
 
 .entry-type {
@@ -65,8 +67,8 @@ body {
 .qr-code img {
     width: 150px; /* Ancho fijo para el código QR */
     height: auto;
-    border: 12px solid #4affa1;
-    border-radius: 10px; /* Bordes redondeados */
+    border: 12px solid #ffffff;
+    border-radius: 7px; /* Bordes redondeados */
     
 }
 
@@ -74,7 +76,7 @@ body {
     margin-top: 20px;
     padding: 10px;
     border-radius: 5px;
-    background-color: #f0f0f0;
+    /* background-color: #f0f0f0; */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
@@ -87,11 +89,13 @@ body {
   .location-container span {
     font-size: 18px;
     font-weight: bold;
+    color: #ffffff;
+    
   }
   
   .location-container p {
     font-size: 14px;
-    color: #666;
+    color: #ffffff;
     margin-top: 10px;
   }
 
