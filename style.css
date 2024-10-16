@@ -47,7 +47,7 @@ body {
 .entry-type {
     margin-top: 15px;
     background-color: inherit;
-    padding: 10px 70px 10px 70px;
+    padding: 3% 20% 3% 20%;
     border-radius: 5px;
     text-align: center;
 }
@@ -71,10 +71,7 @@ body {
 }
 
 .location-container {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+
     margin-top: 20px;
     padding: 10px;
     border-radius: 5px;
