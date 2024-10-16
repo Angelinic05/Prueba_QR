@@ -101,43 +101,41 @@ body {
 }
 
 .schedule {
-    padding: 20px;
-    background-color: #f8f8f8;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .schedule h3 {
-    margin-top: 0;
-  }
-  
-  .schedule-item {
+    padding: 7px;
+}
+
+.schedule h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #003366; /* Color del encabezado */
+}
+
+.schedule-item {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .schedule-item:last-child {
-    border-bottom: none;
-  }
-  
-  .schedule-day {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .schedule-time {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  
-  .schedule-activity {
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
+    padding: 10px;
+    margin: 5px 0;
+    background: #f8f8f8; /* Fondo claro para cada actividad */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.schedule-day {
+    font-weight: bold; /* Negrita para el día */
+    color: #007bff; /* Color para el día */
+}
+
+.schedule-activity {
+    flex: 1;
+    padding: 0 10px; /* Espaciado entre elementos */
+    font-weight: normal; /* Peso de fuente normal */
+}
+
+.schedule-time {
+    font-weight: bold; /* Negrita para la hora */
+    color: #28a745; /* Color verde para la hora */
+}
 
 .nav-bar {
     display: flex;
@@ -203,17 +201,13 @@ body {
     }
 
     .schedule-item {
-        flex-direction: row;
-        align-items: center;
-      }
-    
-      .schedule-day {
-        margin-right: 20px;
-      }
-    
-      .schedule-time {
-        margin-right: 20px;
-      }
+        flex-direction: column; /* Cambia la dirección en móviles */
+        align-items: flex-start; /* Alinear al inicio */
+    }
+
+    .schedule-day, .schedule-activity, .schedule-time {
+        font-size: 0.9rem; /* Tamaño de fuente más pequeño en móviles */
+    }
     
 
     .entry-type {
