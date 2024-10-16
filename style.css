@@ -47,7 +47,7 @@ body {
 .entry-type {
     margin-top: 15px;
     background-color: inherit;
-    padding: 3% 20% 3% 20%;
+    padding: 1% 10% 1% 10%;
     border-radius: 5px;
     text-align: center;
 }
@@ -205,6 +205,10 @@ body {
     .schedule-day, .schedule-activity, .schedule-time {
         font-size: 0.9rem; /* Tamaño de fuente más pequeño en móviles */
     }
+
+    .entry-type {
+        padding: 3% 20% 3% 20%;
+    }
 }
 
 @media (min-width: 601px) and (max-width: 900px) {
@@ -215,6 +219,8 @@ body {
     .name {
         font-size: 1.4rem; /* Tamaño de fuente intermedio */
     }
+
+
 }
 
 @media (min-width: 1200px) {
