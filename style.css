@@ -123,7 +123,6 @@ body {
     margin: 10px 0;
     background-color: rgb(0,0,0, 0.3);
     border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
 .schedule-item:last-child {
@@ -132,19 +131,20 @@ body {
 
 .schedule-day {
     font-weight: bold; /* Negrita para el día */
-    color: #007bff; /* Color para el día */
+    color: #00EB6D; /* Color para el día */
     font-size: 1.2rem; /* Tamaño de fuente mayor */
     margin-bottom: 5px; /* Espacio inferior */
 }
 
 .schedule-time {
     font-weight: bold; /* Negrita para la hora */
-    color: #28a745; /* Color verde para la hora */
+    color: #ffffff; /* Color verde para la hora */
 }
 
 .schedule-activity {
     font-size: 1rem; /* Tamaño de fuente para la actividad */
     margin-top: 5px; /* Espacio superior */
+    color: #ffffff; /* Color verde para la hora */
 }
 
 .nav-bar {
