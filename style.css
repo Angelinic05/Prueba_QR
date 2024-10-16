@@ -26,7 +26,6 @@ body {
 }
 
 .title {
-    margin-left: 20px;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -34,7 +33,9 @@ body {
 }
 
 .title img {
-    max-width: 80%;
+    margin-left: 25px;
+    margin-top: 20px;
+    max-width: 75%;
     height: auto;
 }
 
