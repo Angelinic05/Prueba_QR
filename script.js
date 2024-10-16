@@ -23,9 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   var entryTypeDiv = document.getElementById('entryType');
   var estiloEntrada = getEntryStyle(tipoEntrada);
   entryTypeDiv.style.backgroundColor = estiloEntrada.color;
-  // entryTypeDiv.style.padding = '10px';
   entryTypeDiv.style.borderRadius = '5px';
-  // entryTypeDiv.style.color = 'white';
   entryTypeDiv.style.textAlign = 'center';
   entryTypeDiv.innerHTML = tipoEntrada;
 
