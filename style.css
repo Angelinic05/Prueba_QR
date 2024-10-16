@@ -13,7 +13,10 @@ body {
 }
 
 .container {
-    flex: 1; /* Permite que el contenedor ocupe el espacio restante */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* flex: 1; */
     width: 90%;
     max-width: 800px;
     border-radius: 8px;
@@ -68,6 +71,10 @@ body {
 }
 
 .location-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     margin-top: 20px;
     padding: 10px;
     border-radius: 5px;
@@ -79,12 +86,13 @@ body {
 }
 
 .location-container span {
+    justify-content: flex-start;
     font-size: 18px;
     font-weight: bold;
     color: #00EB6D;
 }
 
-.location-container p {
+.direccion{
     display: flex;
     justify-content: center;
     font-size: 14px;
