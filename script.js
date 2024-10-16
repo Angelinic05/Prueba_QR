@@ -36,7 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const qrCodeSection = document.querySelector('.qr-code');
     const title = document.querySelector('.title');
     const infoSection = document.querySelector('.info');
-    const locationContainer = document.querySelector('.location-container'); // Agregar esta línea
+    const locationContainer = document.querySelector('.location-container'); 
+    const direccion = document.querySelector('.direccion'); 
 
     // Muestra u oculta las secciones
     if (index === 0) {
@@ -45,18 +46,21 @@ document.addEventListener('DOMContentLoaded', () => {
       infoSection.style.display = 'none';
       title.style.display = 'block';  // Muestra la imagen en QR
       locationContainer.style.display = 'block';
+      direccion.style.display = 'block';
     } else if (index === 1) {
       qrCodeSection.style.display = 'none';
       schedule.style.display = 'block';
       infoSection.style.display = 'none';
       title.style.display = 'none';  // Oculta la imagen en Cronograma
-      locationContainer.style.display = 'none';  
+      locationContainer.style.display = 'none'; 
+      direccion.style.display = 'none'; 
     } else {
       qrCodeSection.style.display = 'none';
       schedule.style.display = 'none';
       infoSection.style.display = 'block';  
       title.style.display = 'none';  // Oculta la imagen en Información
       locationContainer.style.display = 'none';
+      direccion.style.display = 'none'; 
     }
 
     // Resaltar el botón activo
