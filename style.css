@@ -102,7 +102,6 @@ body {
 
 .schedule {
     padding: 20px;
-    background-color: #f0f4f8; /* Color de fondo más suave */
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px; /* Espacio entre la agenda y otros elementos */
@@ -112,7 +111,7 @@ body {
     text-align: center;
     margin-bottom: 20px;
     font-size: 2rem; /* Aumentar el tamaño del encabezado */
-    color: #003366; /* Color del encabezado */
+    color: #00EB6D; /* Color del encabezado */
     font-weight: bold; /* Negrita para el encabezado */
 }
 
@@ -122,7 +121,7 @@ body {
     align-items: flex-start; /* Alinear al inicio */
     padding: 15px;
     margin: 10px 0;
-    background: #ffffff; /* Fondo blanco para cada actividad */
+    background-color: rgb(0,0,0, 0.3);
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
@@ -149,6 +148,7 @@ body {
 }
 
 .nav-bar {
+    margin-bottom: 5px;
     display: flex;
     justify-content: space-around;
     padding: 10px;
