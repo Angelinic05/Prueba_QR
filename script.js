@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   var scanned = urlParams.get('scanned');
 
   // Verificar si los parámetros son válidos
-  if (!nombre || !apellido || !infoEvento) {
+  if (!nombre || !apellido) {
     console.error("Faltan parámetros en la URL");
     return;
   }
