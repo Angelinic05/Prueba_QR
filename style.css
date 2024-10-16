@@ -132,7 +132,7 @@ body {
     display: flex;
     justify-content: space-around;
     padding: 10px;
-    background-color: #000000;
+    background-color: rgb(0,0,0, 0.3);
     position: fixed; /* Fija la barra de navegación en la parte inferior */
     bottom: 0; /* Se asegura de que esté al fondo */
     left: 0;
@@ -141,7 +141,8 @@ body {
 }
 
 .nav-button {
-    background: linear-gradient(180deg, #4affa1, #07ffe3);
+    /* background: linear-gradient(180deg, #4affa1, #07ffe3); */
+    background: #00eb6d;
     color: rgb(0, 0, 0);
     border: none;
     padding: 10px 15px;
