@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
   var urlParams = new URLSearchParams(window.location.search);
   var nombre = urlParams.get('nombre');
   var apellido = urlParams.get('apellido');
-  var infoEvento = urlParams.get('infoEvento');
   var tipoEntrada = urlParams.get('tipoEntrada');
   var scanned = urlParams.get('scanned');
 
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Mostrar la información del evento
   document.getElementById('nombre').innerHTML = nombre + " " + apellido;
-  document.getElementById('infoEvento').innerHTML = infoEvento;
 
   // Generar el código QR
   var qrCodeUrl = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://script.google.com/a/macros/luqueacademy.com/s/AKfycbzT8q6T8B2SKVTlk8SROtbX5uZFrDXk0a1rEXJ1FFTSuszKgLy5MAzMBXFAPxI9gxcJSA/exec?nombre=" + encodeURIComponent(nombre);
@@ -39,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const schedule = document.querySelector('.schedule');
     const qrCodeSection = document.querySelector('.qr-code');
     const title = document.querySelector('.title');
-    const infoSection = document.querySelector('.info');
     const locationContainer = document.querySelector('.location-container'); // Agregar esta línea
 
     // Muestra u oculta las secciones
