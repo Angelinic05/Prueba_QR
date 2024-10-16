@@ -179,6 +179,7 @@ body {
 .info {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding: 20px;
 }
@@ -194,8 +195,8 @@ body {
 }
 
 .info img {
-    width: 100px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
 }
 
