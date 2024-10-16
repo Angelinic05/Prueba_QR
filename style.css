@@ -60,7 +60,7 @@ body {
 }
 
 .qr-code img {
-    width: 150px; /* Ancho fijo para el código QR */
+    width: 200px; /* Ancho fijo para el código QR */
     height: auto;
     border: 12px solid #ffffff;
     border-radius: 7px; /* Bordes redondeados */
