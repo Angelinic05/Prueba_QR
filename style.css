@@ -101,40 +101,51 @@ body {
 }
 
 .schedule {
-    padding: 7px;
+    padding: 20px;
+    background-color: #f0f4f8; /* Color de fondo más suave */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Espacio entre la agenda y otros elementos */
 }
 
 .schedule h3 {
     text-align: center;
-    margin-bottom: 10px;
-    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-size: 2rem; /* Aumentar el tamaño del encabezado */
     color: #003366; /* Color del encabezado */
+    font-weight: bold; /* Negrita para el encabezado */
 }
 
 .schedule-item {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    margin: 5px 0;
-    background: #f8f8f8; /* Fondo claro para cada actividad */
-    border-radius: 5px; /* Bordes redondeados */
+    flex-direction: column; /* Por defecto en móviles */
+    align-items: flex-start; /* Alinear al inicio */
+    padding: 15px;
+    margin: 10px 0;
+    background: #ffffff; /* Fondo blanco para cada actividad */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.schedule-item:last-child {
+    margin-bottom: 0; /* Sin margen inferior en el último elemento */
 }
 
 .schedule-day {
     font-weight: bold; /* Negrita para el día */
     color: #007bff; /* Color para el día */
-}
-
-.schedule-activity {
-    flex: 1;
-    padding: 0 10px; /* Espaciado entre elementos */
-    font-weight: normal; /* Peso de fuente normal */
+    font-size: 1.2rem; /* Tamaño de fuente mayor */
+    margin-bottom: 5px; /* Espacio inferior */
 }
 
 .schedule-time {
     font-weight: bold; /* Negrita para la hora */
     color: #28a745; /* Color verde para la hora */
+}
+
+.schedule-activity {
+    font-size: 1rem; /* Tamaño de fuente para la actividad */
+    margin-top: 5px; /* Espacio superior */
 }
 
 .nav-bar {
@@ -201,12 +212,21 @@ body {
     }
 
     .schedule-item {
-        flex-direction: column; /* Cambia la dirección en móviles */
-        align-items: flex-start; /* Alinear al inicio */
+        flex-direction: row; /* Cambia a fila en pantallas más grandes */
+        justify-content: space-between; /* Espacio entre elementos */
+        align-items: center; /* Alinear verticalmente */
     }
 
-    .schedule-day, .schedule-activity, .schedule-time {
-        font-size: 0.9rem; /* Tamaño de fuente más pequeño en móviles */
+    .schedule-day, .schedule-time, .schedule-activity {
+        flex: 1; /* Permite que ocupen espacio equitativo */
+    }
+
+    .schedule-day {
+        margin-right: 20px; /* Espacio a la derecha del día */
+    }
+
+    .schedule-time {
+        margin-right: 20px; /* Espacio a la derecha de la hora */
     }
     
 
