@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const schedule = document.querySelector('.schedule');
     const qrCodeSection = document.querySelector('.qr-code');
     const title = document.querySelector('.title');
+    const infoSection = document.querySelector('.info');
     const locationContainer = document.querySelector('.location-container'); // Agregar esta línea
 
     // Muestra u oculta las secciones
