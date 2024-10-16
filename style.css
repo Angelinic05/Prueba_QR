@@ -220,6 +220,10 @@ body {
         font-size: 1.4rem; /* Tamaño de fuente intermedio */
     }
 
+    .entry-type {
+        padding: 1% 10% 1% 10%;
+    }
+
 
 }
 
@@ -244,5 +248,8 @@ body {
 
     .schedule-day, .schedule-activity, .schedule-time {
         font-size: 1rem; /* Tamaño de fuente adecuado para pantallas grandes */
+    }
+    .entry-type {
+        padding: 1% 10% 1% 10%;
     }
 }
