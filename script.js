@@ -83,15 +83,15 @@ document.addEventListener('DOMContentLoaded', () => {
 function getEntryStyle(tipoEntrada) {
   switch (tipoEntrada.toLowerCase()) {
     case 'preferencial':
-      return { color: '#2EBBFF', texto: 'Preferencial' }; // Color dorado
+      return { color: '#2EBBFF', textColor: '#FFFFFF', texto: 'Preferencial' }; // Color dorado con letra blanca
     case 'general':
-      return { color: '#02E86F', texto: 'General' }; // Color negro
+      return { color: '#02E86F', textColor: '#000000', texto: 'General' }; // Color negro con letra negra
     case 'pass':
-      return { color: '#4CFF55', texto: 'Diamond' }; // Color rojo
+      return { color: '#4CFF55', textColor: '#FF0000', texto: 'Diamond' }; // Color rojo con letra roja
     default:
       return null;
   }
+}
 
 
   
-}
