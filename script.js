@@ -86,7 +86,7 @@ function getEntryStyle(tipoEntrada) {
       return { color: '#2EBBFF', textColor: '#FFFFFF', texto: 'Preferencial' }; // Color dorado con letra blanca
     case 'general':
       return { color: '#02E86F', textColor: '#000000', texto: 'General' }; // Color negro con letra negra
-    case 'pass':
+    case 'Diamond':
       return { color: '#4CFF55', textColor: '#FF0000', texto: 'Diamond' }; // Color rojo con letra roja
     default:
       return null;
