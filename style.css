@@ -266,10 +266,10 @@ body {
         font-size: 2rem; /* Aumenta el tamaño de fuente en pantallas grandes */
     }
 
-    .schedule-item {
-        flex-direction: row; /* Mantiene la dirección en fila */
-        align-items: center; /* Alineación centrada */
-    }
+    /* .schedule-item {
+        flex-direction: row;
+        align-items: center; 
+    } */
 
     .schedule-day, .schedule-activity, .schedule-time {
         font-size: 1rem; /* Tamaño de fuente adecuado para pantallas grandes */
