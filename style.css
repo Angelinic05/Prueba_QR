@@ -47,9 +47,7 @@ body {
 .entry-type {
     margin-top: 15px;
     background-color: inherit;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding: 10px;
+    padding: 10px 40px 10px 40px;
     border-radius: 5px;
     text-align: center;
 }
