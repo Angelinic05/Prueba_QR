@@ -153,7 +153,7 @@ body {
 }
 
 .nav-button.active {
-    background: linear-gradient(180deg, #42ee95c2, #0ad1bab7); /* Color de fondo para el botón activo */
+    background: #009c49; /* Color de fondo para el botón activo */
 }
 
 .info {
